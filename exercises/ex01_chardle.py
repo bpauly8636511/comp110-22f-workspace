@@ -33,6 +33,9 @@ if len(user_word) == 5 and len(user_letter) == 1:
         print((user_letter) + (" found at index 4"))
 
 if instances >= 1:
-    print(str(instances) + (" instances of ") + (user_letter) + (" found in ") + (user_word))
+    if instances == 1:
+        print(str(instances) + (" instance of ") + (user_letter) + (" found in ") + (user_word))
+    else:
+            print(str(instances) + (" instances of ") + (user_letter) + (" found in ") + (user_word))
 else: 
     print(("No instances of ") + (user_letter) + (" found in ") + (user_word))
