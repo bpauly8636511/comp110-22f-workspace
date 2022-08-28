@@ -14,3 +14,5 @@ if len(user_letter) != 0:
 
 if len(user_word) == 4 and len(user_letter) ==0:
     print("Searching for " + user_letter + " in " + user_word)
+
+    
