@@ -30,9 +30,6 @@ if len(user_word) == 5 and len(user_letter) == 1:
         print((user_letter) + (" found at index 3"))
     if user_word[4] == user_letter:
         instances + 1
-        print((user_letter) + (" found at index 3"))
-    if user_word[5] == user_letter:
-        instances + 1
         print((user_letter) + (" found at index 4"))
 
 if instances >= 1:
