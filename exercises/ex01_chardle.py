@@ -6,15 +6,15 @@ user_word: str = (input("Enter a five character word: "))
 user_letter: str = (input("Enter a single character: "))
 instances = 0
 
-if len(user_word) != 4:
+if len(user_word) != 5:
     print("Error: Word must contain five characters")
     exit()
 
-if len(user_letter) != 0:
+if len(user_letter) != 1:
     print("Error: Character must be a single character.")
     exit()
 
-if len(user_word) == 4 and len(user_letter) == 0:
+if len(user_word) == 5 and len(user_letter) == 1:
     print("Searching for " + user_letter + " in " + user_word)
     if user_word.index[0] == user_letter:
         instances + 1 
