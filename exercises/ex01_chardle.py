@@ -34,8 +34,8 @@ if len(user_word) == 4 and len(user_letter) == 0:
     if user_word.index[5] == user_letter:
         instances + 1
         print((user_letter) + (" found at index 4"))
-    else:
-        print(("No instances of ") + (user_letter) + (" found in") + (user_word))
 
-
-
+if instances >= 1:
+    print((instances) + (" instances of ") + (user_letter) + (" found in") + (user_word))
+    else: 
+        print(("No instances of ") + (user_letter) + (" found in ") + (user_word))
