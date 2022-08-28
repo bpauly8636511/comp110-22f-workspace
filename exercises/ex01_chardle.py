@@ -37,5 +37,5 @@ if len(user_word) == 4 and len(user_letter) == 0:
 
 if instances >= 1:
     print((instances) + (" instances of ") + (user_letter) + (" found in") + (user_word))
-    else: 
-        print(("No instances of ") + (user_letter) + (" found in ") + (user_word))
+else: 
+    print(("No instances of ") + (user_letter) + (" found in ") + (user_word))
