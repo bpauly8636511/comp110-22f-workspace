@@ -36,6 +36,6 @@ if instances >= 1:
     if instances == 1:
         print(str(instances) + (" instance of ") + (user_letter) + (" found in ") + (user_word))
     else:
-            print(str(instances) + (" instances of ") + (user_letter) + (" found in ") + (user_word))
+        print(str(instances) + (" instances of ") + (user_letter) + (" found in ") + (user_word))
 else: 
     print(("No instances of ") + (user_letter) + (" found in ") + (user_word))
