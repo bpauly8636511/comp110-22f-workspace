@@ -16,22 +16,22 @@ if len(user_letter) != 1:
 
 if len(user_word) == 5 and len(user_letter) == 1:
     print("Searching for " + user_letter + " in " + user_word)
-    if user_word.index[0] == user_letter:
+    if user_word[0] == user_letter:
         instances + 1 
         print((user_letter) + (" found at index 0"))
-    if user_word.index[1] == user_letter:
+    if user_word[1] == user_letter:
         instances + 1
         print((user_letter) + (" found at index 1"))
-    if user_word.index[2] == user_letter:
+    if user_word[2] == user_letter:
         instances + 1
         print((user_letter) + (" found at index 2"))
-    if user_word.index[3] == user_letter:
+    if user_word[3] == user_letter:
         instances + 1
         print((user_letter) + (" found at index 3"))
-    if user_word.index[4] == user_letter:
+    if user_word[4] == user_letter:
         instances + 1
         print((user_letter) + (" found at index 3"))
-    if user_word.index[5] == user_letter:
+    if user_word[5] == user_letter:
         instances + 1
         print((user_letter) + (" found at index 4"))
 
