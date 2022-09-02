@@ -3,7 +3,7 @@
 __author__ = "730547853"
 
 secret_word: str = ("python")
-wordle_emojis: str("")
+wordle_emojis: str = (" ")
 guess: str = input(f"What is your {len(secret_word)}-letter guess? ")
 guess_length: int = len(guess)
 
