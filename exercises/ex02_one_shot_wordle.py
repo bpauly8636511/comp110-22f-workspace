@@ -5,17 +5,17 @@ __author__ = "730547853"
 secret_word: str = ("python")
 wordle_emojis: str = (" ")
 guess: str = input(f"What is your {len(secret_word)}-letter guess? ")
-guess_length: int = len(guess)
+guess_length: int = 1
 
 while len(guess) != len(secret_word):
     guess: str = input(f"That was not {len(secret_word)} letters! Try again: ")
 
-while guess_length > 0:
-    if ord(secret_word[1]) == ord(guess[1]):
+while guess_length < len(guess):
+    if ord(secret_word[guess_length]) == ord(guess[guess_length]):
         wordle_emojis += "\U0001F7E9"
     else:
         wordle_emojis += "\U00002B1C"
-    guess_length -= 1
+    guess_length += 1
 
 print(wordle_emojis)
 
