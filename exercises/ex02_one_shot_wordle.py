@@ -6,6 +6,9 @@ secret_word: str = ("python")
 wordle_emojis: str = (" ")
 guess: str = input(f"What is your {len(secret_word)}-letter guess? ")
 guess_length: int = 1
+guess_length_two: int = 1
+yellow: bool = False
+
 
 while len(guess) != len(secret_word):
     guess: str = input(f"That was not {len(secret_word)} letters! Try again: ")
@@ -13,9 +16,20 @@ while len(guess) != len(secret_word):
 while guess_length < len(guess):
     if ord(secret_word[guess_length]) == ord(guess[guess_length]):
         wordle_emojis += "\U0001F7E9"
+        guess_length += 1
     else:
-        wordle_emojis += "\U00002B1C"
-    guess_length += 1
+        while yellow and guess_length_two < len(guess):
+            if ord(secret_word[guess_length]) == ord(secret_word[guess_length_two]):
+                yellow: bool = True
+            else:
+                guess_length_two += 1
+        if yellow == True:
+            wordle_emojis += "\U0001F7E8"
+            guess_length += 1
+        else:
+            wordle_emojis += "\U00002B1C"
+            guess_length += 1
+    
 
 print(wordle_emojis)
 
