@@ -1,4 +1,4 @@
-"""Wordle but with only one attempt to guess the six letter word"""
+"""Wordle but with only one attempt to guess the six letter word!"""
 
 __author__ = "730547853"
 
@@ -11,7 +11,7 @@ yellow: bool = False
 
 
 while len(guess) != len(secret_word):
-    guess: str = input(f"That was not {len(secret_word)} letters! Try again: ")
+    print(f"That was not {len(secret_word)} letters! Try again: ")
 
 while guess_length < len(guess):
     if ord(secret_word[guess_length]) == ord(guess[guess_length]):
@@ -24,10 +24,10 @@ while guess_length < len(guess):
                 yellow = True
             else:
                 guess_length_two += 1
-        if yellow == False:
+        if yellow is False:
             wordle_emojis += "\U00002B1C"
             guess_length += 1
-        elif yellow == True:
+        elif yellow is True:
             wordle_emojis += "\U0001F7E8"
             guess_length += 1
 
@@ -37,9 +37,3 @@ if guess == secret_word:
     print("Woo! You got it!")
 else:
     print("Not quite. Play again soon!")
-
-
-
-
-
-
