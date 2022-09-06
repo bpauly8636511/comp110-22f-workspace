@@ -19,7 +19,7 @@ while guess_length < len(guess):
         guess_length += 1
     else:
         while yellow and guess_length_two < len(guess):
-            if ord(secret_word[guess_length]) == ord(secret_word[guess_length_two]):
+            if ord(secret_word[guess_length]) == ord(guess[guess_length_two]):
                 yellow = True
             else:
                 guess_length_two += 1
