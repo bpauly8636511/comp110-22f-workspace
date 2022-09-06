@@ -17,19 +17,19 @@ while guess_length < len(guess):
     if ord(secret_word[guess_length]) == ord(guess[guess_length]):
         wordle_emojis += "\U0001F7E9"
         guess_length += 1
+        guess_length_two = 0
     else:
-        while yellow and guess_length_two < len(guess):
-            if ord(secret_word[guess_length]) == ord(guess[guess_length_two]):
+        while not yellow and guess_length_two < len(secret_word):
+            if ord(secret_word[guess_length_two]) == ord(guess[guess_length]):
                 yellow = True
             else:
                 guess_length_two += 1
-        if yellow == True:
-            wordle_emojis += "\U0001F7E8"
-            guess_length += 1
-        else:
+        if yellow == False:
             wordle_emojis += "\U00002B1C"
             guess_length += 1
-    
+        elif yellow == True:
+            wordle_emojis += "\U0001F7E8"
+            guess_length += 1
 
 print(wordle_emojis)
 
