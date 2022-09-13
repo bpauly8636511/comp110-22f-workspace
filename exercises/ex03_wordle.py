@@ -3,8 +3,8 @@
 __author__ = "730547853"
 
 
-"""Comparing the indices of two variables to see if the second variable is within the first."""
 def contains_char(first_word: str, letter: str) -> bool:
+    """Comparing the indices of two variables to see if the second variable is within the first."""
     i: int = 0
     assert len(letter) == 1
     while i < len(first_word):
@@ -14,9 +14,10 @@ def contains_char(first_word: str, letter: str) -> bool:
             i += 1
     return False
 
-"""Codifying the guess to display the colors corresponding to what would happpen in actual wordle."""
+
 def emojified(guess: str, secret: str) -> str:
-    wordle_emojis: str = (" ")
+    """Codifying the guess to display the colors corresponding to what would happpen in actual wordle."""
+    wordle_emojis: str = ("")
     i: int = 0
     assert len(guess) == len(secret)
     while i < len(secret):
@@ -30,16 +31,18 @@ def emojified(guess: str, secret: str) -> str:
             wordle_emojis += "\U00002B1C"
             i += 1
     return wordle_emojis
-"""M"""
+
+
 def input_guess(expected_length: int) -> str:
+    """Makes sure the user inputted data is correctly matched to the length needed."""
     guess: str = input(f"Enter a {expected_length} character word: ")
     while expected_length != len(guess):
         guess: str = input(f"That wasn't {len(guess)} chars! Try again: ")
-    if len(guess) == expected_length:
-        return guess
+    return guess
 
-"""The entrypoint of the program and the main game loop."""
+
 def main() -> None:
+    """The entrypoint of the program and the main game loop."""
     secret: str = ("codes")
     turns: int = 1
     won: bool = False
@@ -54,13 +57,8 @@ def main() -> None:
         if won:
             print(f"You won in {turns}/6 turns!")
     if not won:
-        print(f"X/6 - Sorry, try again tomorrow!")
+        print("X/6 - Sorry, try again tomorrow!")
+
 
 if __name__ == "__main__":
     main()
-
-    
-    
-
-
-
