@@ -31,7 +31,7 @@ def emojified(guess: str, secret: str) -> str:
             wordle_emojis += "\U00002B1C"
             i += 1
 
-def input_guess(expected_length: int) -> int:
+def input_guess(expected_length: int) -> str:
     guess: str = input(f"Enter a {expected_length} character word: ")
     while expected_length != len(guess):
         guess: str = input(f"That wasn't {len(guess)} chars! Try again: ")
