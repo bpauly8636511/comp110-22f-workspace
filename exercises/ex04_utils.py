@@ -2,11 +2,12 @@
 
 __author__ = "730547853"
 
+
 def all(input: list[int], int: int) -> bool:
     """A function that checks each integer in a list to see if they all match the integer given."""
+    i: int = 0
     if len(input) < 1:
         return False
-    i: int = 0
     while i < len(input):
         if int != input[i]:
             return False
