@@ -7,7 +7,7 @@ def all(input: list[int], int: int) -> bool:
     if len(input) < 1:
         return False
     i: int = 0
-    while i <= len(input):
+    while i < len(input):
         if int != input[i]:
             return False
         else:
@@ -21,7 +21,7 @@ def max(input: list[int]) -> int:
         raise ValueError("max() arg is an empty list")
     max_value: int = 0
     i: int = 0
-    while i <= len(input):
+    while i < len(input):
         if input[i] > max_value:
             max_value = input[i]
             i += 1
