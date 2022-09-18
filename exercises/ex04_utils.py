@@ -32,8 +32,8 @@ def max(input: list[int]) -> int:
 def is_equal(input: list[int], input_two: list[int]) -> bool:
     """A function that will check to lists of integers to make sure they are deeply equal; constituted of the exact same values at each index."""
     i: int = 0
-    if len(input) == 0 or len(input_two) == 0:
-        return False
+    if len(input) == 0 and len(input_two) == 0:
+        return True
     if len(input) != len(input_two):
         return False
     if len(input) == len(input_two):
