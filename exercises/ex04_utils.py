@@ -19,7 +19,7 @@ def max(input: list[int]) -> int:
     """A function that will return the greatest number from a list of integers given."""
     if len(input) == 0:
         raise ValueError("max() arg is an empty list")
-    max_value: int = 0
+    max_value: int = input[0]
     i: int = 0
     while i < len(input):
         if input[i] > max_value:
