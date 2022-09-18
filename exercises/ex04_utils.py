@@ -12,6 +12,7 @@ def all(input: list[int], int: int) -> bool:
             return False
         else:
             i += 1
+    return True
 
 
 def max(input: list[int]) -> int:
