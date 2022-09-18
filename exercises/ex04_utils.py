@@ -26,6 +26,7 @@ def max(input: list[int]) -> int:
             i += 1
         else:
             i += 1
+    return max_value
 
 def is_equal(input: list[int], input_two: list[int]) -> bool:
     """A function that will check to lists of integers to make sure they are deeply equal; constituted of the exact same values at each index."""
