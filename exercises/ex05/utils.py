@@ -29,7 +29,7 @@ def sub(x: list[int], y: int, z: int) -> list[int]:
         i = 0
     elif z >= len(x):
         z = len(x) - 1
-    elif len(x) == 0 or y > len(x) or z <= 0:
+    elif len(x) == 0 or y >= len(x) or z <= 0:
         return sub_list
     while i < z:
         sub_list.append(x[i])
