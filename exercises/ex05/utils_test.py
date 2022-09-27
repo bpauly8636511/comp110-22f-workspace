@@ -4,6 +4,7 @@ __author__ = "730574853"
 
 from utils import only_evens, sub, concat
 
+
 def test_only_evens_empty() -> None:
     """Edge testing the only_evens function, that if there was an empty list entered it would give an empty list."""
     x: list[int] = []
