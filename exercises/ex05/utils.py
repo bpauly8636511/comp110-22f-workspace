@@ -26,8 +26,8 @@ def sub(x: list[int], y: int, z: int) -> list[int]:
     sub_list: list[int] = []
     i: int = y
     if y < 0:
-        i: int = 0
-    elif z > len(x):
+        i = 0
+    elif z >= len(x):
         z = len(x) - 1
     elif len(x) == 0 or y > len(x) or z <= 0:
         return sub_list
