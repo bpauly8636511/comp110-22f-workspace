@@ -50,9 +50,9 @@ def test_sub_positive() -> None:
     z: int = 4
     assert sub(x, y, z) == [4, 6, 8]
 
+
 def test_sub_negative() -> None:
     x: list[int] = [-2, -5, -6, 7, 8, 9]
     y: int = 2
     z: int = 3
     assert sub(x, y, z) == [-6]
-    
