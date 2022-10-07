@@ -13,6 +13,7 @@ def main() -> None:
     """What makes the rest of my program run."""
     global points
     greet()
+    creating_tomodachi()
     adventure_one()
     points = adventure_two(points) + points
     print(f"Congrats {player}! You have {points} love points!")
@@ -25,6 +26,8 @@ def greet() -> None:
     global player 
     player += input(str("What is your name? "))
     print("Welcome! Your goal is to make your Neko love you! You can do this by getting love points!")
+
+def creating_tomodachi() -> None:
     global neko
     user_input: int = int(input("Please choose Neko 1: \U0001F431 or Neko 2: \U0001F408 by entering 1 or 2: "))
     while (user_input != 1) and (user_input != 2):
