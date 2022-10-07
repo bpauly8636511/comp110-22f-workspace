@@ -40,6 +40,7 @@ def adventure_one() -> None:
     """The point of this procedure is to begin the adventure with your neko to make it grow closer to 100 points using globals."""
     global points
     global player
+    global neko
     print(f"1. Pet your Neko! \U0001F63A {neko}")
     print(f"2. Feed your Neko! \U0001F638 {neko}")
     print(f"3. Play with your Neko! \U0001F63C {neko}")
@@ -59,9 +60,9 @@ def adventure_one() -> None:
 
 def adventure_two(x: int) -> int:
     """The point of this function is to add random points to the global variable at the end because cats are random."""
-    print(f"1. Give your Neko a belly rub!")
-    print(f"2. Hug your Neko!")
-    print(f"3. Give your Neko a kiss!")
+    print("1. Give your Neko a belly rub!")
+    print("2. Hug your Neko!")
+    print("3. Give your Neko a kiss!")
     users_choice: int = int(input("Please choose option 1, 2, or three! "))
     global player
     while (users_choice != 1) and (users_choice != 2) and (users_choice != 3):
@@ -81,9 +82,10 @@ def adventure_two(x: int) -> int:
 
 
 def game_loop() -> None:
-    print(f"You may choose from three options, would you like to continue the game with route 1? ")
-    print(f"Continue the game with route 2? ")
-    print(f"Or end the game, Aka route 3?")
+    """This function loops in order for the user to run the game however many times they'd like."""
+    print("You may choose from three options, would you like to continue the game with route 1? ")
+    print("Continue the game with route 2? ")
+    print("Or end the game, Aka route 3?")
     users_choice: int = int(input("Please choose 1, 2, or 3 for route 1, route 2, or route 3: "))
     global points
     while (users_choice != 1) and (users_choice != 2) and (users_choice != 3):
