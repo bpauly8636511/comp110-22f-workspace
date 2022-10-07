@@ -4,20 +4,20 @@ __author__ = "730574853"
 
 
 from random import randint
-POINTS: int = 0
+points: int = 0
 PLAYER: str = ""
 NEKO: str = ""
 
 
 def main() -> None:
     """What makes the rest of my program run."""
-    global POINTS
+    global points
     greet()
     adventure_one()
-    POINTS = adventure_two(POINTS) + POINTS
-    print(f"Congrats {PLAYER}! You have {POINTS} love points!")
+    points = adventure_two(points) + points
+    print(f"Congrats {PLAYER}! You have {points} love points!")
     game_loop()
-    print(f"Congrats {PLAYER}! You finished with {POINTS} love points!")
+    print(f"Congrats {PLAYER}! You finished with {points} love points!")
 
 
 def greet() -> None:
@@ -39,7 +39,7 @@ def greet() -> None:
 
 def adventure_one() -> None:
     """The point of this procedure is to begin the adventure with your neko to make it grow closer to 100 points using globals."""
-    global POINTS
+    global points
     global PLAYER
     print(f"1. Pet your Neko! \U0001F63A {NEKO}")
     print(f"2. Feed your Neko! \U0001F638 {NEKO}")
@@ -48,14 +48,14 @@ def adventure_one() -> None:
     while (users_choice != 1) and (users_choice != 2) and (users_choice != 3):
         users_choice = int(input("Incorrect input! Please enter 1, 2 or 3: "))
     if users_choice == 1:
-        POINTS += 20
-        print(f"Congrats {PLAYER}! You have {POINTS} love points!")
+        points += 20
+        print(f"Congrats {PLAYER}! You have {points} love points!")
     elif users_choice == 2:
-        POINTS += 25
-        print(f"Congrats {PLAYER}! You have {POINTS} love points!")
+        points += 25
+        print(f"Congrats {PLAYER}! You have {points} love points!")
     elif users_choice == 3:
-        POINTS += 15
-        print(f"Congrats {PLAYER}! You have {POINTS} love points!")
+        points += 15
+        print(f"Congrats {PLAYER}! You have {points} love points!")
 
 
 def adventure_two(x: int) -> int:
@@ -86,15 +86,15 @@ def game_loop() -> None:
     print(f"Continue the game with route 2? ")
     print(f"Or end the game, Aka route 3?")
     users_choice: int = int(input("Please choose 1, 2, or 3 for route 1, route 2, or route 3: "))
-    global POINTS
+    global points
     while (users_choice != 1) and (users_choice != 2) and (users_choice != 3):
         users_choice = int(input("Incorrect input! Please choose 1, 2, or 3!"))
     while users_choice != 3:
         if users_choice == 1:
             adventure_one()
         if users_choice == 2:
-            POINTS = adventure_two(POINTS)
-            print(f"Congrats {PLAYER}! You have {POINTS} love points!")
+            points = adventure_two(points)
+            print(f"Congrats {PLAYER}! You have {points} love points!")
         users_choice: int = int(input("Please choose 1, 2, or 3 for route 1, route 2, or route 3: "))       
 
 
