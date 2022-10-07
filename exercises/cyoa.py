@@ -92,7 +92,6 @@ def game_loop() -> None:
     while users_choice != 3:
         if users_choice == 1:
             adventure_one()
-            print(f"Congrats {PLAYER}! You have {POINTS} love points!")
         if users_choice == 2:
             POINTS = adventure_two(POINTS)
             print(f"Congrats {PLAYER}! You have {POINTS} love points!")
