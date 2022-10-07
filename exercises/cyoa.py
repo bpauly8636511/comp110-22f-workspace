@@ -101,7 +101,7 @@ def game_loop() -> None:
         if users_choice == 2:
             points = adventure_two(points)
             print(f"Congrats {player}! You have {points} love points!")
-        users_choice: int = int(input("Please choose 1, 2, or 3 for route 1, route 2, or route 3: "))       
+        users_choice = int(input("Please choose 1, 2, or 3 for route 1, route 2, or route 3: "))       
 
 
 if __name__ == "__main__":
