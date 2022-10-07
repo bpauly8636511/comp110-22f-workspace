@@ -22,7 +22,6 @@ def main() -> None:
 
 def greet() -> None:
     """A welcome message that also gets the users name."""
-    #please add welcome message
     global player 
     player += input(str("What is your name? "))
     print("Welcome! Your goal is to make your Neko love you! You can do this by getting love points!")
