@@ -13,14 +13,16 @@ def test_invert() -> None:
 
 def test_key_error() -> None:
     """The purpose of this is to do an edge case to make sure it raises a key error for repeat keys."""
-    with pytest.raises(KeyError):
-        my_dictionary = {'kris': 'jordan', 'michael': 'jordan'}
-        invert(my_dictionary)
 
 
 def test_invert_large_strings() -> None:
-    """The purpose of this is to do an edge case of large strings."""
+    """The purpose of this is to do an edge case of a large dictionary."""
+    x = {"UNC": "FUN", "DUKE": "LAME", "COMP110": "IS SUPER AWESOME", "MARY": "HAD A LITTLE LAMB", "THIS DICT": "IS LONG"}
+    assert invert(x) == {"FUN": "UNC", "LAME": "DUKE", "IS SUPER AWESOME": "COMP110", "HAD A LITTLE LAMB": "MARY", "IS LONG": "THIS DICT"}
+
 
 
 def test_invert_same() -> None:
     """The purpose of this test is to do an edge case of dictionaries that have the same key and value."""
+    x = {"UNC": "UNC", "DUKE": "DUKE"}
+    assert invert(x) == {"UNC": "UNC", "DUKE": "DUKE"}
