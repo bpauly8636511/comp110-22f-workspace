@@ -3,7 +3,7 @@
 __author__ = "730574853"
 
 def invert(x: dict[str, str]) -> dict[str, str]:
-    """This function takes the keys and values and inverts the two."""
+    """This function takes the keys and values and inverts the two using lookup."""
     inverted = dict()
     for keys in x:
         inverted['keys'] = keys
@@ -13,29 +13,25 @@ def invert(x: dict[str, str]) -> dict[str, str]:
 
 def count(x: list[str]) -> dict[str, int]:
     """This function takes a list of strings and counts the occurances of each unique string."""
-    new_keys: list[str] = ""
-    second_index: int = 0
-    for index in x:
-        second_index += 1
-        if index not in new_keys:
-            new_keys += x[second_index]
-    new_values: list[int] = ()
+    keys: list[str] = ""
     counter: int = 0
+    final_dict = dict()
+    for values in x:
+        if values not in keys:
+            keys.append(values)
+    values_list: list[int] = ()
     i: int = 0
-    # please figure out the purpose of new_index
-    new_index: str = index(index)
-    for keys in new_keys:
+    for strings in keys:
         while i < len(x):
-            if x[i] == new_keys[new_index]:
-                counter += 0
+            if strings == x[i]:
+                counter += 1
                 i += 1
-            else:
+            else: 
                 i += 1
-        new_values += counter
-    final_count = dict()
-    for index in new_keys:
-        final_count[index] += new_values[index]
-    return final_count
+        values_list.append(counter)
+    for index in range(len(keys)):
+        final_dict.append({keys: values_list})
+    return final_dict
 
 
 def favorite_color(x: dict[str, str]) -> list[str]:
@@ -49,5 +45,5 @@ def favorite_color(x: dict[str, str]) -> list[str]:
         if color_count[keys] > color_count[final_list]:
             final_list = keys
         elif color_count[keys] == color_count[final_list]:
-            final_list += keys
+            final_list.append(keys)
     return final_list
