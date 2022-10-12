@@ -26,3 +26,11 @@ def test_invert_same() -> None:
     """The purpose of this test is to do an edge case of dictionaries that have the same key and value."""
     x = {"UNC": "UNC", "DUKE": "DUKE"}
     assert invert(x) == {"UNC": "UNC", "DUKE": "DUKE"}
+
+
+def test_count() -> None:
+    """The purpose of this test is to do a case test to make sure that the basic function works."""
+    x: list[str] = ["UNC", "UNC", "UNC", "DUKE", "DUKE"]
+    assert count(x) == {"UNC": 3, "DUKE": 2}
+
+
