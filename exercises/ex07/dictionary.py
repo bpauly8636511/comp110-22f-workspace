@@ -36,16 +36,16 @@ def count(x: list[str]) -> dict[str, int]:
     return final_dict
 
 
-def favorite_color(x: dict[str, str]) -> list[str]:
+def favorite_color(x: dict[str, str]) -> str:
     """This function looks at the most common string in a dictionary and returns it."""
     colors: list[str] = []
     for keys in x:
         colors.append(x[keys]) 
     count_colors: dict = count(colors)
     greatest_value: int = 0
-    final_color: list[str] = []
+    final_color: str = ""
     for strings in count_colors:
         if count_colors[strings] > greatest_value:
-            final_color = [strings]
+            final_color = strings
             greatest_value = count_colors[strings]
     return final_color
