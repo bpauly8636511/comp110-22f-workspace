@@ -8,7 +8,6 @@ def invert(x: dict[str, str]) -> dict[str, str]:
     inverted = dict()
     for keys in x:
         inverted[x[keys]] = keys
-        raise ValueError("More than one key occurance.")
     return inverted
 
 
