@@ -49,16 +49,16 @@ def test_count_one_repeat() -> None:
 def test_favorite_color() -> None:
     """The purpose of this case test is to make sure that the basic function favorite colors works."""
     x = {"BROOKE": "BLUE", "GAVIN": "RED", "WILL": "RED", "ADORA": "PINK", "MOM": "GREEN"}
-    assert favorite_color(x) == ["RED"]
+    assert favorite_color(x) == "RED"
 
 
 def test_favorite_color_once() -> None:
     """The purpose of this test it to do an edge case that will check for when there is only one favorite color."""
     x = {"Brooke": "BLUE"}
-    assert favorite_color(x) == ["BLUE"]
+    assert favorite_color(x) == "BLUE"
 
 
 def test_favorite_color_even() -> None:
     """The purpose of this test is to do an edge case that will check for when there is colors equally liked."""
     x = {"BROOKE": "BLUE", "GAVIN": "RED", "ADORA": "PINK"}
-    assert favorite_color(x) == ["BLUE"]
+    assert favorite_color(x) == "BLUE"
