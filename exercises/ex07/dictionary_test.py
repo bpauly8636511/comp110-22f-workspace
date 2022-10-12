@@ -7,6 +7,8 @@ import pytest
 
 def test_invert() -> None:
     """The purpose of this is to do a case test to make sure the function works."""
+    x = {"UNC": "FUN", "DUKE": "LAME"}
+    assert invert(x) == {"FUN": "UNC", "LAME": "DUKE"}
 
 
 def test_key_error() -> None:
