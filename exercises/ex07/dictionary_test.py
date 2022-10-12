@@ -34,3 +34,13 @@ def test_count() -> None:
     assert count(x) == {"UNC": 3, "DUKE": 2}
 
 
+def test_count_no_repeats() -> None:
+    """The purpose of this test is to do an edge case that will check for no repeats in the list."""
+    x: list[str] = ["UNC", "IS", "THE BEST"]
+    assert count(x) == {"UNC": 1, "IS": 1, "THE BEST": 1}
+
+
+def test_count_one_repeat() -> None:
+    """The purpose of this test is to do an edge case that will check for when theres only one repeated value."""
+    x: list[str] = ["UNC", "UNC", "UNC", "UNC", "DUKE"]
+    assert count(x) == {"UNC": 4, "DUKE": 1}
