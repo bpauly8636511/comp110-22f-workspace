@@ -6,7 +6,7 @@ def invert(x: dict[str, str]) -> dict[str, str]:
     """This function takes the keys and values and inverts the two using lookup."""
     inverted = dict()
     for keys in x:
-        inverted['keys'] = keys
+        inverted.update({x[keys]: keys})
     return inverted
 
 
@@ -30,7 +30,7 @@ def count(x: list[str]) -> dict[str, int]:
                 i += 1
         values_list.append(counter)
     for index in range(len(keys)):
-        final_dict.append({keys: values_list})
+        final_dict.update({keys: values_list})
     return final_dict
 
 
