@@ -3,7 +3,7 @@
 __author__ = "730574853"
 
 from dictionary import count, invert, favorite_color
-import pytest
+
 
 def test_invert() -> None:
     """The purpose of this is to do a case test to make sure the function works."""
@@ -19,7 +19,6 @@ def test_invert_large_strings() -> None:
     """The purpose of this is to do an edge case of a large dictionary."""
     x = {"UNC": "FUN", "DUKE": "LAME", "COMP110": "IS SUPER AWESOME", "MARY": "HAD A LITTLE LAMB", "THIS DICT": "IS LONG"}
     assert invert(x) == {"FUN": "UNC", "LAME": "DUKE", "IS SUPER AWESOME": "COMP110", "HAD A LITTLE LAMB": "MARY", "IS LONG": "THIS DICT"}
-
 
 
 def test_invert_same() -> None:
