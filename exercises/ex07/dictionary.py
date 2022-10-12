@@ -2,13 +2,13 @@
 
 __author__ = "730574853"
 
+
 def invert(x: dict[str, str]) -> dict[str, str]:
     """This function takes the keys and values and inverts the two using lookup."""
     inverted = dict()
     for keys in x:
         inverted[x[keys]] = keys
     return inverted
-
 
 
 def count(x: list[str]) -> dict[str, int]:
