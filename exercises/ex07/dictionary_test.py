@@ -5,6 +5,7 @@ __author__ = "730574853"
 from dictionary import count, invert, favorite_color
 import pytest
 
+
 def test_invert() -> None:
     """The purpose of this is to do a case test to make sure the function works."""
     x = {"UNC": "FUN", "DUKE": "LAME"}
@@ -16,7 +17,6 @@ def test_key_error() -> None:
     with pytest.raises(KeyError):
         my_dictionary = {'kris': 'jordan', 'michael': 'jordan'}
         invert(my_dictionary)
-
 
 
 def test_invert_large_strings() -> None:
