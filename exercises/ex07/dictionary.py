@@ -15,7 +15,7 @@ def count(x: list[str]) -> dict[str, int]:
     """This function takes a list of strings and counts the occurances of each unique string."""
     keys: list[str] = []
     counter: int = 1
-    final_dict = dict()
+    final_dict: dict[str, int] = dict()
     for values in x:
         if values not in keys:
             keys.append(values)
