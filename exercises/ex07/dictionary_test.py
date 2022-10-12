@@ -44,3 +44,15 @@ def test_count_one_repeat() -> None:
     """The purpose of this test is to do an edge case that will check for when theres only one repeated value."""
     x: list[str] = ["UNC", "UNC", "UNC", "UNC", "DUKE"]
     assert count(x) == {"UNC": 4, "DUKE": 1}
+
+
+def test_favorite_color() -> None:
+    """The purpose of this case test is to make sure that the basic function favorite colors works."""
+    x = {"BROOKE": "BLUE", "GAVIN": "RED", "WILL": "RED", "ADORA": "PINK", "MOM": "GREEN"}
+    assert favorite_color(x) == ["RED"]
+
+
+def test_favorite_color_once() -> None:
+    """The purpose of this test it to do an edge case that will check for when there is only one favorite color."""
+    x = {"Brooke": "BLUE"}
+    assert favorite_color(x) == ["BLUE"]
