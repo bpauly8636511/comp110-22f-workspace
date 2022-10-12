@@ -48,7 +48,4 @@ def favorite_color(x: dict[str, str]) -> list[str]:
         if count_colors[strings] > greatest_value:
             final_color = [strings]
             greatest_value = count_colors[strings]
-        elif count_colors[strings] == greatest_value:
-            final_color.append(strings)
-            greatest_value = count_colors[strings]
     return final_color
