@@ -56,3 +56,9 @@ def test_favorite_color_once() -> None:
     """The purpose of this test it to do an edge case that will check for when there is only one favorite color."""
     x = {"Brooke": "BLUE"}
     assert favorite_color(x) == ["BLUE"]
+
+
+def test_favorite_color_even() -> None:
+    """The purpose of this test is to do an edge case that will check for when there is colors equally liked."""
+    x = {"BROOKE": "BLUE", "GAVIN": "RED", "ADORA": "PINK"}
+    assert favorite_color(x) == ["BLUE"]
