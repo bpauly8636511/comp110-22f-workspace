@@ -45,8 +45,8 @@ def head(table: dict[str, list[str]], row_amount: int) -> dict[str, list[str]]:
 def select(table: dict[str, list[str]], column_names: list[str]) -> dict[str, list[str]]:
     """Produce a new table but only with a certain subset of original columns."""
     final_selection: dict[str, list[str]] = {}
-    for columns in table[column_names]:
-        final_selection[columns] = column_names
+    for columns in column_names:
+        final_selection[columns] = table[columns]
     return final_selection
 
 
