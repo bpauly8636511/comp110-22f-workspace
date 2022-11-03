@@ -6,6 +6,7 @@ __author__ = "730574853"
 
 from csv import DictReader
 
+
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
     """read the rows of a csv into a 'table'."""
     result: list[dict[str, str]] = []
@@ -16,6 +17,7 @@ def read_csv_rows(filename: str) -> list[dict[str, str]]:
     file_handle.close()
     return result
 
+
 def column_values(table: list[dict[str, str]], column: str) -> list[str]:
     """Produce a list[str] of all values in a single column."""
     result: list[str] = []
@@ -24,6 +26,7 @@ def column_values(table: list[dict[str, str]], column: str) -> list[str]:
         result.append(item)
     return result
 
+
 def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     """transform a row-oriented table into a column-oriented table."""
     result: dict[str, list[str]] = {}
@@ -31,6 +34,7 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     for column in first_row:
         result[column] = column_values(row_table, column)
     return result
+
 
 def head(table: dict[str, list[str]], row_amount: int) -> dict[str, list[str]]:
     """Produce a new column based table with only the first amount wanted of rows."""
@@ -41,6 +45,7 @@ def head(table: dict[str, list[str]], row_amount: int) -> dict[str, list[str]]:
             first_values.append(table[columns][items])
         final_head[columns] = first_values
     return final_head
+
 
 def select(table: dict[str, list[str]], column_names: list[str]) -> dict[str, list[str]]:
     """Produce a new table but only with a certain subset of original columns."""
@@ -61,6 +66,7 @@ def concat(table: dict[str, list[str]], table_two: dict[str, list[str]]) -> dict
         else:
             final_dict[keys] = table_two[keys]
     return final_dict
+
 
 def count(x: list[str]) -> dict[str, int]:
     """This function takes a list of strings and counts the occurances of each unique string."""
