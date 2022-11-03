@@ -31,3 +31,39 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     for column in first_row:
         result[column] = column_values(row_table, column)
     return result
+
+def head(table: dict[str, list[str]], row_amount: int) -> dict[str, list[str]]:
+    """Produce a new column based table with only the first amount wanted of rows."""
+    final_head: dict[str, list[str]] = []
+
+    return final_head
+
+def select(table: dict[str, list[str]], column_names: list[str]) -> dict[str, list[str]]:
+    """Produce a new table but only with a certain subset of original columns."""
+
+def concat(table: dict[str, list[str]], table_two: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Producing a new column based table with two previous column based tables combined."""
+
+def count(x: list[str]) -> dict[str, int]:
+    """This function takes a list of strings and counts the occurances of each unique string."""
+    keys: list[str] = []
+    counter: int = 1
+    final_dict: dict[str, int] = dict()
+    for values in x:
+        if values not in keys:
+            keys.append(values)
+    values_list: list[int] = []
+    i: int = 0
+    for strings in keys:
+        counter = 0
+        i = 0
+        while i < len(x):
+            if strings == x[i]:
+                counter += 1
+                i += 1
+            else: 
+                i += 1
+        values_list.append(counter)
+    for index in range(len(keys)):
+        final_dict[keys[index]] = values_list[index]
+    return final_dict
