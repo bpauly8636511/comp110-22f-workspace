@@ -34,7 +34,7 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 def head(table: dict[str, list[str]], row_amount: int) -> dict[str, list[str]]:
     """Produce a new column based table with only the first amount wanted of rows."""
-    final_head: dict[str, list[str]] = []
+    final_head: dict[str, list[str]] = {}
     for columns in table:
         first_values: list[str] = []
         for items in range(row_amount):
@@ -44,7 +44,7 @@ def head(table: dict[str, list[str]], row_amount: int) -> dict[str, list[str]]:
 
 def select(table: dict[str, list[str]], column_names: list[str]) -> dict[str, list[str]]:
     """Produce a new table but only with a certain subset of original columns."""
-    final_selection: dict[str, list[str]] = []
+    final_selection: dict[str, list[str]] = {}
     for columns in table[column_names]:
         final_selection[columns] = column_names
     return final_selection
@@ -52,11 +52,15 @@ def select(table: dict[str, list[str]], column_names: list[str]) -> dict[str, li
 
 def concat(table: dict[str, list[str]], table_two: dict[str, list[str]]) -> dict[str, list[str]]:
     """Producing a new column based table with two previous column based tables combined."""
-    final_dict: dict[str, list[str]] = []
+    final_dict: dict[str, list[str]] = {}
     for columns in table:
         final_dict[columns] = table[columns]
     for keys in table_two:
-        
+        if keys in final_dict:
+            final_dict[keys] = table_two[keys] + table[keys]
+        else:
+            final_dict[keys] = table_two[keys]
+    return final_dict
 
 def count(x: list[str]) -> dict[str, int]:
     """This function takes a list of strings and counts the occurances of each unique string."""
