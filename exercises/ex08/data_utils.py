@@ -39,6 +39,8 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(table: dict[str, list[str]], row_amount: int) -> dict[str, list[str]]:
     """Produce a new column based table with only the first amount wanted of rows."""
     final_head: dict[str, list[str]] = {}
+    if row_amount >= len(table):
+        return table
     for columns in table:
         first_values: list[str] = []
         for items in range(row_amount):
