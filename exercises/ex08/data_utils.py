@@ -8,7 +8,7 @@ from csv import DictReader
 
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
-    """read the rows of a csv into a 'table'."""
+    """Read the rows of a csv into a 'table'."""
     result: list[dict[str, str]] = []
     file_handle = open(filename, "r", encoding="utf8")
     csv_reader = DictReader(file_handle)
@@ -28,7 +28,7 @@ def column_values(table: list[dict[str, str]], column: str) -> list[str]:
 
 
 def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
-    """transform a row-oriented table into a column-oriented table."""
+    """Transform a row-oriented table into a column-oriented table."""
     result: dict[str, list[str]] = {}
     first_row: dict[str, str] = row_table[0]
     for column in first_row:
