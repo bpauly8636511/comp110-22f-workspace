@@ -29,4 +29,15 @@ class Simpy:
         self.values = new_simpy
 
 
-
+    def arange(self, start: float, stop: float, step: float = 1.0) -> None:
+        """Creates a range of values for simpy to be, each value increasing by step."""
+        assert step != 0
+        new_value: float = start 
+        new_simpy: list[float] = []
+        i: int = 0
+        while i < stop:
+            if i < 1:
+                new_simpy.append(start)
+            new_value += step
+            new_simpy.append(new_value)
+            i += 1
