@@ -6,7 +6,10 @@ from exercises.ex09 import constants
 from math import sin, cos, pi
 
 
-__author__ = ""  # TODO
+__author__ = "730574853"  
+
+VULNERABLE = 0
+INFECTED = 1
 
 
 class Point:
@@ -30,7 +33,7 @@ class Cell:
     """An individual subject in the simulation."""
     location: Point
     direction: Point
-    sickness: int = 0
+    sickness: int = constants.VARIABLE
 
     def __init__(self, location: Point, direction: Point):
         """Construct a cell with its location and direction."""
