@@ -8,7 +8,7 @@ from csv import DictReader
 
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
-    """read the rows of a csv into a 'table'."""
+    """Read the rows of a csv into a 'table'."""
     result: list[dict[str, str]] = []
     file_handle = open(filename, "r", encoding="utf8")
     csv_reader = DictReader(file_handle)
@@ -28,7 +28,7 @@ def column_values(table: list[dict[str, str]], column: str) -> list[str]:
 
 
 def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
-    """transform a row-oriented table into a column-oriented table."""
+    """Transform a row-oriented table into a column-oriented table."""
     result: dict[str, list[str]] = {}
     first_row: dict[str, str] = row_table[0]
     for column in first_row:
@@ -39,6 +39,8 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 def head(table: dict[str, list[str]], row_amount: int) -> dict[str, list[str]]:
     """Produce a new column based table with only the first amount wanted of rows."""
     final_head: dict[str, list[str]] = {}
+    if row_amount >= len(table):
+        return table
     for columns in table:
         first_values: list[str] = []
         for items in range(row_amount):
@@ -62,7 +64,7 @@ def concat(table: dict[str, list[str]], table_two: dict[str, list[str]]) -> dict
         final_dict[columns] = table[columns]
     for keys in table_two:
         if keys in final_dict:
-            final_dict[keys] = table_two[keys] + table[keys]
+            final_dict[keys] += table_two[keys] 
         else:
             final_dict[keys] = table_two[keys]
     return final_dict
