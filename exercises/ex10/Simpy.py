@@ -29,21 +29,23 @@ class Simpy:
         self.values = new_simpy
 
 
-    def arange(self, start: float, stop: float, step: float = 1.0) -> Simpy:
+    def arange(self, start: float, stop: float, step: float = 1.0) -> None:
         """Creates a range of values for simpy to be, each value increasing by step."""
         assert step != 0.0
         new_value: float = start
         new_simpy: list[float] = [start]
         i: float = start
-        if start > 0.0:
-            while i < start:
+        stop = stop - step
+        if step > 0.0:
+            while i < stop:
                 new_value += step
                 new_simpy.append(new_value)
                 i += step
-        if start < 0.0:
+        if step < 0.0:
             while i > stop:
                 new_value += step
                 new_simpy.append(new_value)
+                i += step
         self.values = new_simpy
 
     
@@ -56,21 +58,17 @@ class Simpy:
 
     def __add__(self, rhs: Union[Simpy, float]) -> Simpy:
         """Ädding a left hand variable of a simpy type to a right hand side variable that is a Simpy or float type."""
-        added_simpy: Simpy = []
+        added_simpy: list[Simpy] = []
         if isinstance(rhs, Simpy):
-            assert range(lhs) == range(rhs)
-            simpy_dict: dict[float, float] = dict()
-            new_value: Simpy = Simpy()
-            for item in rhs:
-                for i in self.values:
-                    simpy_dict[item] = i 
-            for keys in simpy_dict:
-                new_value = simpy_dict + simpy_dict[keys]
+            assert len(self.values) == len(rhs)
+            new_value: Simpy = ()
+            for i in range(self.values):
+                new_value = rhs[i] + self.values[i]
                 added_simpy.append(new_value)
             return added_simpy
         if isinstance(rhs, float):
-            for nums in lhs:
-                new_value = nums + 10.00
+            for nums in self.values:
+                new_value = nums + rhs
                 added_simpy.append(new_value)
             return added_simpy
         
