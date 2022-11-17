@@ -41,3 +41,9 @@ class Simpy:
             new_value += step
             new_simpy.append(new_value)
             i += 1
+    
+
+    def sum(self) -> float:
+        """Summing all the values in Simpy."""
+        final_sum: float = sum(self.values)
+        return final_sum
