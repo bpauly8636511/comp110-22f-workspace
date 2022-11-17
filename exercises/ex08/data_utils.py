@@ -64,7 +64,7 @@ def concat(table: dict[str, list[str]], table_two: dict[str, list[str]]) -> dict
         final_dict[columns] = table[columns]
     for keys in table_two:
         if keys in final_dict:
-            final_dict[keys] = table_two[keys] + table[keys]
+            final_dict[keys] += table_two[keys] 
         else:
             final_dict[keys] = table_two[keys]
     return final_dict
