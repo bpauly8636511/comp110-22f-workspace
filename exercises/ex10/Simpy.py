@@ -92,3 +92,29 @@ class Simpy:
                 new_values = floats ** rhs
                 exponentiated_simpy.append(new_values)
             return exponentiated_simpy
+    
+
+    def __eq__(self, rhs: Union[Simpy, float]) -> list[bool]:
+        """Taking Simpy values and directly comparing them with another Simpy or float value to make a list of boolean values."""
+        mask: list[bool] = []
+        if isinstance(rhs, Simpy):
+            assert len(self.values) == len(rhs.values)
+            new_value: Simpy = ()
+            i: int = 0
+            while i < len(self.values):
+                if self.values[i] == rhs.values[i]:
+                    new_value = True
+                else:
+                    new_value = False
+                mask.append(new_value)
+                i += 1
+            return mask
+        if isinstance(rhs, float):
+            for values in self.values:
+                if values == rhs:
+                    new_value = True
+                else:
+                    new_value = False
+                mask.append(new_value)
+            return mask
+                
