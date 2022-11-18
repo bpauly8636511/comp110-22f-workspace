@@ -121,10 +121,10 @@ class Simpy:
 
     def __gt__(self, rhs: Union[Simpy, float]) -> list[bool]:
         """Similar to eq except this time testing for greater than."""
-        mask_two: list[bool]
+        mask_two: list[bool] = []
+        new_value: Simpy = ()
         if isinstance(rhs, Simpy):
             assert len(self.values) == len(rhs.values)
-            new_value: Simpy = ()
             i: int = 0
             while i < len(self.values):
                 if self.values[i] > rhs.values[i]:
@@ -142,3 +142,14 @@ class Simpy:
                     new_value = False
                 mask_two.append(new_value)
             return mask_two
+    
+
+    def __getitem__(self, rhs: int) -> float:
+        """Using subscription annotation to identify a value of a Simpy at a certain index."""
+        final: Simpy = ()
+        i: int = 0
+        while i <= rhs:
+            final = self.values[i]
+            i += 1
+        return final
+
