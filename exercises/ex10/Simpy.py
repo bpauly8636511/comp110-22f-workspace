@@ -60,11 +60,13 @@ class Simpy:
         """Ädding a left hand variable of a simpy type to a right hand side variable that is a Simpy or float type."""
         added_simpy: list[Simpy] = []
         if isinstance(rhs, Simpy):
-            assert len(self.values) == len(rhs)
+            assert len(self.values) == len(rhs.values)
             new_value: Simpy = ()
-            for i in range(self.values):
-                new_value = rhs[i] + self.values[i]
+            i: int = 0
+            while i < len(self.values):
+                new_value = self.values[i] + rhs.values[i] 
                 added_simpy.append(new_value)
+                i += 1
             return added_simpy
         if isinstance(rhs, float):
             for nums in self.values:
@@ -72,4 +74,21 @@ class Simpy:
                 added_simpy.append(new_value)
             return added_simpy
         
-
+    
+    def __pow__(self, rhs: Union[Simpy, float]) -> Simpy:
+        """This is very similar to add but instead it is supposed to take self to an exponentiation of a float or simpy value."""
+        exponentiated_simpy: list[Simpy] = []
+        if isinstance(rhs, Simpy):
+            assert len(self.values) == len(rhs.values)
+            new_values: Simpy = ()
+            i: int = 0
+            while i < len(self.values):
+                new_values = self.values[i] ** rhs.values[i]
+                exponentiated_simpy.append(new_values)
+                i += 1
+            return exponentiated_simpy
+        if isinstance(rhs, float):
+            for floats in self.values:
+                new_values = floats ** rhs
+                exponentiated_simpy.append(new_values)
+            return exponentiated_simpy
