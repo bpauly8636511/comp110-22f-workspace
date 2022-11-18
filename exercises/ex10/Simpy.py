@@ -144,12 +144,23 @@ class Simpy:
             return mask_two
     
 
-    def __getitem__(self, rhs: int) -> float:
-        """Using subscription annotation to identify a value of a Simpy at a certain index."""
-        final: Simpy = ()
-        i: int = 0
-        while i <= rhs:
-            final = self.values[i]
-            i += 1
-        return final
-
+    def __getitem__(self, rhs: Union[int, list[bool]]) -> Union[float, Simpy]:
+        """Using subscription annotation to identify a value of a Simpy at a certain index or true value."""
+        if isinstance(rhs, int):
+            final: Simpy = list()
+            i: int = 0
+            while i <= rhs:
+                final = self.values[i]
+                i += 1
+            return final
+        else:
+            assert len(self.values) == len(rhs)
+            i: int = 1
+            new_simpy: Simpy = list()
+            while i < len(self.values):
+                if rhs[i] == True:
+                    new_simpy.append(self.values[i])
+                    i += 1
+                if rhs[i] == False:
+                    i += 1
+            return new_simpy
